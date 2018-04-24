@@ -1,6 +1,5 @@
 import requests
 
-
 class BotHandler:
 
     def __init__(self, token):
@@ -25,6 +24,8 @@ class BotHandler:
 
         if len(get_result) > 0:
             last_update = get_result[-1]
-            return True, last_update
+        else:
+            last_update = get_result[len(get_result)]
 
-        return False, 0
+        return last_update
+
